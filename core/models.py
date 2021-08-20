@@ -32,7 +32,7 @@ VERIFICATION_OPTIONS = (
 
 
 class User(AbstractUser):
-    stripe_customer_id = models.CharField(max_length=50, blank = True)
+    stripe_customer_id = models.CharField(max_length=50, blank = True, null = True)
 
 
 class Profile(models.Model):
