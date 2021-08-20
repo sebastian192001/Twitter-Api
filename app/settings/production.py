@@ -10,8 +10,12 @@ ALLOWED_HOSTS = ['twiter-api.herokuapp.com']
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd1h45g6homgj82',
+        'USER': 'lcuvutzjmeungl' ,
+        'PASSWORD':'90ecc06f9ae428c73e4cd575811bb30472aa8a0987adde84ebe99f62abcedd26',
+        'HOST':'ec2-54-159-35-35.compute-1.amazonaws.com',
+        'PORT': 5432,
     }
 }
 
