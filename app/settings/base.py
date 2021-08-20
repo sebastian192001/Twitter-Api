@@ -34,6 +34,7 @@ LOCAL_APPS = [
 
 THIRD_APPS = [
     'rest_framework',
+    'corsheaders',
 ]
 
 INSTALLED_APPS =  BASE_APPS  + LOCAL_APPS + THIRD_APPS 
@@ -118,9 +119,11 @@ STATICFILES_DIRS = (BASE_DIR,'static')
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:3000/checkout",
+    "http://localhost:3000/api",
 ]
 
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000",
     "http://localhost:3000/checkout",
+    "http://localhost:3000/api",
 ]
