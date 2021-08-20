@@ -33,5 +33,4 @@ class UserListSerializer(serializers.ModelSerializer):
             'is_superuser': instance['is_superuser'],
             'is_active': instance['is_active'],
             'date_joined': instance['date_joined'],
-            'stripe_customer_id': instance['stripe_customer_id'],
         }

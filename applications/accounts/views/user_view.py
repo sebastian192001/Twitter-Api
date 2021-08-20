@@ -16,7 +16,6 @@ class UserAPIView(APIView):
             'is_superuser',
             'is_active',
             'date_joined',
-            'stripe_customer_id',
         )
         users_serializer = UserListSerializer(users, many = True)
         return Response(users_serializer.data)

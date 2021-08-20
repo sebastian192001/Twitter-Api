@@ -32,8 +32,8 @@ VERIFICATION_OPTIONS = (
 
 
 class User(AbstractUser):
-    stripe_customer_id = models.CharField(max_length=50, blank = True, null = True)
-
+    """ stripe_customer_id = models.CharField(max_length=50, blank = True, null = True) """
+    pass
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
