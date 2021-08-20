@@ -27,4 +27,28 @@ class UserAPIView(APIView):
             return Response(user_serializer.data, status = status.HTTP_201_CREATED)
         return Response(user_serializer.errors, status = status.HTTP_400_BAD_REQUEST)
 
-        
+
+class DetailUserAPIView(APIView):
+
+    def get(self, request, pk = None):
+
+        if request.method == 'GET':
+            user = User.objects.filter(id = pk).first()
+            user_serializer = UserSerializer(user)
+            return Response(user_serializer.data, status = status.HTTP_202_ACCEPTED)
+
+    def put(self, request, pk = None):
+
+        if request.method == 'PUT':
+            user = User.objects.filter(id = pk).first()
+            user_serializer = UserSerializer(user, data = request.data)
+            if user_serializer.is_valid():
+                user_serializer.save()
+                return Response(user_serializer.data, status = status.HTTP_202_ACCEPTED)
+            return Response(user_serializer.errors)
+
+    def delete(self, request, pk = None):
+
+        user = User.objects.filter(id = pk).first()
+        user.delete()
+        return Response('Eliminado')

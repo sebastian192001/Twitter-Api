@@ -116,15 +116,3 @@ STATIC_ROOT = '/static_root/'
 AUTH_USER_MODEL = 'core.User'
 
 STATICFILES_DIRS = (BASE_DIR,'static')
-
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "http://localhost:3000/checkout",
-    "http://localhost:3000/api",
-]
-
-CORS_ORIGIN_WHITELIST = [
-    "http://localhost:3000",
-    "http://localhost:3000/checkout",
-    "http://localhost:3000/api",
-]
