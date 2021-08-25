@@ -31,12 +31,12 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:3000/checkout",
     "http://localhost:3000/api",
-    "https://miguesc2.github.io/",
+    "https://miguesc2.github.io",
 ]
 
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000",
     "http://localhost:3000/checkout",
     "http://localhost:3000/api",
-    "https://miguesc2.github.io/",
+    "https://miguesc2.github.io",
 ]
