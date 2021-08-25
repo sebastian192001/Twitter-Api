@@ -18,6 +18,13 @@ class UserSerializer(serializers.ModelSerializer):
         updated_user.save()
         return updated_user
 
+
+class UserTokenSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('username', 'email', 'first_name','last_name')
+
+
 class UserListSerializer(serializers.ModelSerializer):
     
     class Meta:
