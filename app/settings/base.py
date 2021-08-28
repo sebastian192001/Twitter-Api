@@ -41,6 +41,9 @@ THIRD_APPS = [
 INSTALLED_APPS =  BASE_APPS  + LOCAL_APPS + THIRD_APPS 
 
 
+TOKEN_EXPIRED_AFTER_SECONDS = 900
+
+
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',

@@ -4,7 +4,9 @@ from rest_framework.views import APIView
 from core.models import Profile
 from applications.serializers.profile_serializer import ProfileSerializer
 
-class ProfileAPIView(APIView):
+from applications.accounts.authentication_mixins import Authentication
+
+class ProfileAPIView(Authentication,APIView):
 
     def get(self, request):
         profiles = Profile.objects.all()
