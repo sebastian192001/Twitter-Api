@@ -9,4 +9,5 @@ urlpatterns = [
     path('login/', Login.as_view(), name = 'Login'),
     path('logout/', Logout.as_view(), name = 'Logout'),
     path('refresh-token/', UserToken.as_view(), name = 'refresh_token'),
+    path('post/', include('applications.posts.routers')),
 ]
