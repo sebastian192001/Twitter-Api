@@ -1,4 +1,4 @@
-from rest_framework import fields, serializers
+from rest_framework import serializers
 from core.models import User
 
 class UserSerializer(serializers.ModelSerializer):
@@ -22,7 +22,7 @@ class UserSerializer(serializers.ModelSerializer):
 class UserTokenSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('username', 'email', 'first_name','last_name')
+        fields = ('id','username', 'email', 'first_name','last_name')
 
 
 class UserListSerializer(serializers.ModelSerializer):
