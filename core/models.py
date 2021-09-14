@@ -47,6 +47,8 @@ class Profile(models.Model):
 
     coins = models.DecimalField( max_digits=19, decimal_places=2, default=0, blank=False)
 
+    followers = models.ManyToManyField(User, blank = True, related_name = 'followers')
+
     date_created = models.DateField(auto_now_add=True)
 
     #user info
@@ -84,6 +86,10 @@ def comment_directory_path(instace, filname):
     return 'users/commentposts/{0}'.format(filname)
 
 class SocialPost(models.Model):
+
+    shared_body = models.TextField(blank = True, null = True)
+    shared_user = models.ForeignKey(User, on_delete=models.CASCADE, related_name = "share", null = True, blank = True) 
+
     body = models.TextField()
     image = models.ImageField(upload_to = user_directory_path, blank = True, null = True)
     created_on = models.DateTimeField(auto_now_add=True)
@@ -91,7 +97,7 @@ class SocialPost(models.Model):
     likes = models.ManyToManyField(User, blank = True, related_name = 'likes')
 
     def __str__(self):
-        return self.body
+        return self.author
 
 class SocialComment(models.Model):
     comment = models.TextField()
