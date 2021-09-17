@@ -1,3 +1,4 @@
+from django.contrib.auth import get_user_model
 #from typing import cast
 from django.db import models
 #from django.db.models.deletion import CASCADE
@@ -6,6 +7,7 @@ from django.conf import settings
 import os
 #from PIL import Image
 from django.db.models.signals import post_save
+
 
 """-----------------------------Users and Profile models-----------------------------"""
 
@@ -94,7 +96,7 @@ class SocialPost(models.Model):
     image = models.ImageField(upload_to = user_directory_path, blank = True, null = True)
     created_on = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(User, on_delete = models.CASCADE, related_name = 'social_post_author')
-    likes = models.ManyToManyField(User, blank = True, related_name = 'likes')
+    likes = models.ManyToManyField(get_user_model(), blank = True, related_name = 'likes')
 
     def __str__(self):
         return self.author
