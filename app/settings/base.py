@@ -100,7 +100,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'America/Bogota'
+TIME_ZONE = 'America/Lima'
 
 USE_I18N = True
 
@@ -115,7 +115,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
-MEDIA_ROOT = '/media_root/'
+MEDIA_ROOT = 'media_root/'
 STATIC_ROOT = '/static_root/'
 
 AUTH_USER_MODEL = 'core.User'

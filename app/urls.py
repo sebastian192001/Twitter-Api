@@ -1,6 +1,10 @@
 from django.conf.urls import include
 from django.contrib import admin
 from django.urls import path, include, re_path
+
+from django.conf import settings
+from django.views.static import serve
+
 from applications.accounts.views.login_view import Login, Logout, UserToken
 
 from rest_framework import permissions
@@ -36,4 +40,10 @@ urlpatterns = [
     path('refresh-token/', UserToken.as_view(), name = 'refresh_token'),
     path('post/', include('applications.posts.routers')),
 
+]
+
+urlpatterns += [
+   re_path(r'^media/(?P<path>.*)$', serve, {
+      'document_root' : settings.MEDIA_ROOT 
+   })
 ]

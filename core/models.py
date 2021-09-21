@@ -99,7 +99,7 @@ class SocialPost(models.Model):
     likes = models.ManyToManyField(get_user_model(), blank = True, related_name = 'likes')
 
     def __str__(self):
-        return self.author
+        return ("author: {}, date: {}").format(self.author, self.created_on.strftime('%H:%M:%S %d/%m/%Y'))
 
 class SocialComment(models.Model):
     comment = models.TextField()
